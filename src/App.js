@@ -1,25 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import ReactDOM from 'react-dom';
+import CardList from './component/CardList';
+
 import './App.css';
+// import { constants } from 'perf_hooks';
+
+let cards = [
+  {
+    title: "Super card",
+    subtitle: "kolsgt",
+    url: "https://loremflickr.com/320/240/dog",
+    id: 1
+  },
+  {
+    title: "Other card",
+    subtitle: "Ipsum chdek",
+    url: "https://loremflickr.com/g/320/240/paris",
+    id: 2
+  },
+  {
+    title: "Last card",
+    subtitle: "theerest",
+    url: "https://loremflickr.com/g/320/240/girl",
+    id: 3
+  }
+];
+
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div >
+        <h3 className="heading">Editor Picks</h3>
+        <div className="cards-container">
+
+          <CardList cards={cards}/>
+      </div>
       </div>
     );
   }
